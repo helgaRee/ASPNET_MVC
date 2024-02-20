@@ -1,0 +1,38 @@
+﻿@{
+    bool isRoot = Context.Request.Path.Value!.Equals("/");
+}
+
+<header>
+    <div class="container">
+        <a href="home.html" id="logo" asp-page="/index"><img src="images/icons/Group 2.svg" alt="Logotype for Silicon"></a>
+
+        <div id="menu">
+            <nav>
+                <a class="menu-link" asp-page="@(isRoot ? "#overview" : "/index")">Overview</a>
+                <a class="menu-link" asp-page="@(isRoot ? "#features" : "/index#features")">Features</a>
+                <a class="menu-link" asp-page="/contact">Overview</a>
+            </nav>
+        </div>
+
+        <a href="javascript:void(0)" class="hamburger-icon icon" onclick="toggleMobileMenu()">
+            <i class="fa-duotone fa-bars"></i>
+        </a>
+
+        <div class="toggle-switch">
+            <label>Light</label>
+            <label class="switch" for="switch-mode"></label>
+            <input type="checkbox" id="switch-mode">
+            <span class="slider round"></span>
+            <label>Dark</label>
+        </div>
+
+        <div class="account-buttons">
+            <button class="btn-gray"><i class="fa-solid fa-right-to-bracket"></i> Sign in</button>
+            <button class="btn-theme"><i class="fa-light fa-user-plus"></i> Sign up</button>
+        </div>
+
+        <button id="btn-mobile">
+            <i class="fa-regular fa-bars"></i>
+        </button>
+    </div>
+</header>
